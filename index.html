@@ -8,7 +8,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;1,300&family=Rubik:wght@400;500&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;1,300&family=Rubik:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;1,300&family=Rubik:wght@400;500&display=swap"></noscript>
 
 <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -23,6 +24,10 @@
 <meta property="og:image" content="images/social.png">
 
 <style>
+/* Font fallback to minimize CLS from web font loading */
+@font-face{font-family:"Open Sans Fallback";src:local("Arial");ascent-override:101%;descent-override:27%;line-gap-override:0%;size-adjust:98%}
+@font-face{font-family:"Rubik Fallback";src:local("Arial");ascent-override:103%;descent-override:28%;line-gap-override:0%;size-adjust:101%}
+
 /* Reset and Base */
 html,body,h1,h2,h3,h4,h5,h6,p,a,blockquote,cite,ol,ul,li,fieldset,form,label,img,div,dl,dt,dd,input,figure,figcaption,picture,button,input,select{margin:0;padding:0;border:0;font-weight:normal;-webkit-tap-highlight-color:rgba(0,0,0,0)}
 html,input,select{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
@@ -32,12 +37,12 @@ body{color:#262626;background:#fff}
 
 .wrap{width:84%;padding:0 8%;max-width:1000px;margin:0 auto}
 
-a{font-family:"Open Sans","Helvetica","Arial",sans-serif;font-style:normal;font-weight:600;text-decoration:none;display:inline-block;position:relative;color:#262626}
+a{font-family:"Open Sans","Open Sans Fallback","Helvetica","Arial",sans-serif;font-style:normal;font-weight:600;text-decoration:none;display:inline-block;position:relative;color:#262626}
 a:after{content:"";position:absolute;bottom:0;left:0;width:0;border-bottom:1px solid #262626;transition:all .2s ease}
 a:hover:after{width:100%}
 
 /* Skip Link */
-.skip-link{position:absolute;top:-40px;left:0;background:#7dbb91;color:#fff;padding:8px 16px;z-index:100;font-family:"Open Sans",sans-serif;font-size:14px;transition:top .2s}
+.skip-link{position:absolute;top:-40px;left:0;background:#7dbb91;color:#fff;padding:8px 16px;z-index:100;font-family:"Open Sans","Open Sans Fallback",sans-serif;font-size:14px;transition:top .2s}
 .skip-link:focus{top:0}
 .skip-link:after{display:none}
 
@@ -57,26 +62,26 @@ a:hover:after{width:100%}
 }
 
 /* Hero Section */
-.hero{background:#7dbb91;color:#fff;padding:56px 0 0 0}
+.hero{background:#7dbb91;color:#fff;padding:56px 0 0 0;min-height:600px}
 .hero h1 span{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .hero h1 a{display:block;width:153px;height:13px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 188 16' fill='none'%3E%3Cpath d='m38.8 0 0.5 0c4.6 0 8.4 3.6 8.4 8 0 4.4-3.8 8-8.4 8-4.7 0-8.4-3.5-8.4-8l0-0.5h2.9l0 0.5c0 3 2.4 5.4 5.5 5.4 3.1 0 5.5-2.4 5.5-5.4 0-3-2.4-5.3-5.5-5.4l-0.5 0v-2.6zm84.3 0 0.5 0c4.6 0 8.4 3.6 8.4 8 0 4.4-3.8 8-8.4 8-4.7 0-8.4-3.5-8.4-8l0-0.5h2.9l0 0.5c0 3 2.4 5.4 5.5 5.4 3.1 0 5.5-2.4 5.5-5.4 0-3-2.4-5.3-5.5-5.4l-0.5 0v-2.6zm28.6 0 0.5 0c4.6 0 8.4 3.6 8.4 8 0 4.4-3.8 8-8.4 8-4.7 0-8.4-3.5-8.4-8l0-0.5h2.9l0 0.5c0 3 2.4 5.4 5.5 5.4 3.1 0 5.5-2.4 5.5-5.4 0-3-2.4-5.3-5.5-5.4l-0.5 0v-2.6zm-148.8 0.4v15.3h-2.8v-15.3h2.8zm81.5 0 3.6 0.1 5.8 7.4 5.8-7.4 3.1-0.1v15.3h-2.8v-11l-6.1 7.9-9.4-12.2zm-67 0-6.2 6 7.2 9.3h-3.6l-7.2-9.4 6-5.8h3.9zm154.7 0 3.6 0.1 8.8 11.3v-11.3h2.8v15.3h-3.4l-11.8-15.3zm-104.4 0c1.9 0 3.3 0.5 4.3 1.5l0.1 0.1c0.8 0.9 1.2 1.9 1.2 3 0 1.3-0.5 2.4-1.4 3.3-0.9 0.8-2 1.3-3.5 1.4l4.6 5.9h-3.6l-6.5-8.4 4.9 0c0.7 0 1.5-0.1 2.1-0.7 0.4-0.4 0.6-0.9 0.6-1.4 0-0.4-0.1-0.8-0.4-1.2 0 0-0.1-0.1-0.1-0.1-0.3-0.3-0.7-0.5-1.2-0.7-0.3-0.1-0.7-0.1-1.1-0.1h-7.1l-1.5-2.6h8.6zm104.4 11.6 2.8 3.6h-2.8v-3.6z' fill='%23fff'/%3E%3C/svg%3E");background-size:contain;background-repeat:no-repeat}
 .hero h1 a:hover:after{width:0}
-.hero h2{font-family:"Rubik","Helvetica","Arial",sans-serif;font-style:normal;font-weight:400;font-size:40px;line-height:52px;margin:80px 0 24px 0}
-.hero p{font-family:"Open Sans","Helvetica","Arial",sans-serif;font-style:normal;font-weight:300;font-size:18px;line-height:28px}
-.hero .astronaut{width:70%;margin:0 auto;margin-top:40px;height:352px;background-image:url(images/stars.svg);background-size:contain;background-repeat:no-repeat;padding-top:50px}
-.hero .astronaut img{max-width:100%;height:auto;align-self:flex-end;animation-duration:8s;animation-iteration-count:infinite;margin:0 auto;transform-origin:bottom;animation-name:bounce;animation-timing-function:ease}
+.hero h2{font-family:"Rubik","Rubik Fallback","Helvetica","Arial",sans-serif;font-style:normal;font-weight:400;font-size:40px;line-height:52px;margin:80px 0 24px 0}
+.hero p{font-family:"Open Sans","Open Sans Fallback","Helvetica","Arial",sans-serif;font-style:normal;font-weight:300;font-size:18px;line-height:28px}
+.hero .astronaut{width:70%;margin:0 auto;margin-top:40px;height:352px;background-image:url(images/stars.svg);background-size:contain;background-repeat:no-repeat;padding-top:20px;overflow:hidden}
+.hero .astronaut img{max-width:100%;height:auto;align-self:flex-end;animation-duration:8s;animation-iteration-count:infinite;margin:0 auto;transform-origin:bottom;animation-name:bounce;animation-timing-function:ease;will-change:transform}
 .hero-intro a{color:#fff}
 .hero-intro a:after{border-color:#fff}
 
 /* Modules */
 .mod{width:84%;padding:0 8%;padding-top:56px;padding-bottom:56px}
 .mod h2,.mod p{max-width:700px}
-.mod h2{font-family:"Rubik","Helvetica","Arial",sans-serif;font-style:normal;font-weight:400;font-size:30px;line-height:44px}
-.mod p{font-family:"Open Sans","Helvetica","Arial",sans-serif;font-style:normal;font-weight:300;font-size:16px;line-height:28px;margin:12px 0 40px 0}
+.mod h2{font-family:"Rubik","Rubik Fallback","Helvetica","Arial",sans-serif;font-style:normal;font-weight:400;font-size:30px;line-height:44px}
+.mod p{font-family:"Open Sans","Open Sans Fallback","Helvetica","Arial",sans-serif;font-style:normal;font-weight:300;font-size:16px;line-height:28px;margin:12px 0 40px 0}
 
 /* Intro/Journey Section */
 .intro h2{margin-bottom:24px}
-.intro p{font-family:"Open Sans","Helvetica","Arial",sans-serif;font-style:normal;font-weight:300;font-size:18px;line-height:28px;margin:0 0 24px 0 !important}
+.intro p{font-family:"Open Sans","Open Sans Fallback","Helvetica","Arial",sans-serif;font-style:normal;font-weight:300;font-size:18px;line-height:28px;margin:0 0 24px 0 !important}
 .intro p.signature{margin-top:40px !important;padding-top:24px;border-top:1px solid #eee}
 .intro p.signature a{color:#7dbb91}
 .intro p.signature a:after{border-color:#7dbb91}
@@ -85,7 +90,7 @@ a:hover:after{width:100%}
 .evolution{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:56px;padding:40px 24px;background:#fafafa;border-radius:16px;max-width:950px}
 .evolution-step{text-align:center;display:flex;flex-direction:column;align-items:center;min-width:140px}
 .evolution-icon{font-size:32px;margin-bottom:12px}
-.evolution-step p{font-family:"Open Sans","Helvetica","Arial",sans-serif;font-weight:300;font-size:12px;color:#666;margin:0 0 12px 0;white-space:nowrap}
+.evolution-step p{font-family:"Open Sans","Open Sans Fallback","Helvetica","Arial",sans-serif;font-weight:300;font-size:12px;color:#666;margin:0 0 12px 0;white-space:nowrap}
 .evolution-logo{height:55px;display:flex;align-items:center;justify-content:center}
 .evolution-logo img{max-height:50px;max-width:130px;width:auto;object-fit:contain}
 .evolution-arrow{font-size:20px;color:#7dbb91;font-weight:bold}
@@ -120,9 +125,9 @@ a:hover:after{width:100%}
 .audience .illustration{position:relative;margin:0 auto}
 .audience .illustration img{max-height:160px;width:auto;position:absolute;bottom:32px;left:0;right:0;margin:0 auto}
 .audience .illustration:before{content:"";display:block;width:160px;height:160px;border-radius:100%;background:#fafafa}
-.audience h3{font-family:"Rubik","Helvetica","Arial",sans-serif;font-style:normal;font-weight:500;font-size:15px;line-height:24px;margin-top:16px;text-align:center}
+.audience h3{font-family:"Rubik","Rubik Fallback","Helvetica","Arial",sans-serif;font-style:normal;font-weight:500;font-size:15px;line-height:24px;margin-top:16px;text-align:center}
 .audience ul{list-style-position:outside;margin-left:18px;margin-top:12px}
-.audience li{font-family:"Open Sans","Helvetica","Arial",sans-serif;font-style:normal;font-weight:300;font-size:14px;line-height:24px;margin-top:8px}
+.audience li{font-family:"Open Sans","Open Sans Fallback","Helvetica","Arial",sans-serif;font-style:normal;font-weight:300;font-size:14px;line-height:24px;margin-top:8px}
 
 /* Footer */
 .footer{background:#fafafa;padding:56px 0}
@@ -135,18 +140,18 @@ a:hover:after{width:100%}
 /* Privacy Footer */
 .privacy-footer{padding:56px 0}
 .privacy-footer .wrap{position:relative}
-.privacy-footer h2{font-family:"Rubik","Helvetica","Arial",sans-serif;font-style:normal;font-weight:400;font-size:30px;line-height:44px}
-.privacy-footer p{font-family:"Open Sans","Helvetica","Arial",sans-serif;font-style:normal;font-weight:300;font-size:16px;line-height:28px;margin:12px 0 24px 0}
-.privacy-footer p.copyright{font-family:"Open Sans","Helvetica","Arial",sans-serif;font-style:normal;font-weight:300;font-size:14px;line-height:24px;margin:56px 0 0 0}
+.privacy-footer h2{font-family:"Rubik","Rubik Fallback","Helvetica","Arial",sans-serif;font-style:normal;font-weight:400;font-size:30px;line-height:44px}
+.privacy-footer p{font-family:"Open Sans","Open Sans Fallback","Helvetica","Arial",sans-serif;font-style:normal;font-weight:300;font-size:16px;line-height:28px;margin:12px 0 24px 0}
+.privacy-footer p.copyright{font-family:"Open Sans","Open Sans Fallback","Helvetica","Arial",sans-serif;font-style:normal;font-weight:300;font-size:14px;line-height:24px;margin:56px 0 0 0}
 .privacy-footer ul{list-style:none}
 .privacy-footer ul li{margin:0 0 8px 0}
-.privacy-footer ul li a{font-family:"Open Sans","Helvetica","Arial",sans-serif;font-style:normal;font-weight:600;font-size:14px;line-height:24px;color:#7dbb91}
+.privacy-footer ul li a{font-family:"Open Sans","Open Sans Fallback","Helvetica","Arial",sans-serif;font-style:normal;font-weight:600;font-size:14px;line-height:24px;color:#7dbb91}
 .privacy-footer ul li a:after{border-color:#7dbb91}
 .privacy-footer .footer-astronaut{display:none}
 
 /* Desktop Styles */
 @media only screen and (min-width:1000px){
-  .hero{padding:106px 0 120px 0;margin:32px 32px 0 32px}
+  .hero{padding:106px 0 120px 0;margin:32px 32px 0 32px;min-height:auto}
   .hero .wrap{display:flex;align-items:center;justify-content:space-between}
   .hero h1{width:188px;height:16px}
   .hero h2{margin:120px 0 40px 0;font-size:72px;line-height:84px}
@@ -190,7 +195,7 @@ a:hover:after{width:100%}
   <picture>
     <source media="(max-width: 999px)" srcset="images/banner2-mobile.svg">
     <source media="(min-width: 1000px)" srcset="images/banner2.svg">
-    <img src="images/banner2.svg" alt="" class="banner-image" role="presentation" width="1440" height="60" fetchpriority="high">
+    <img src="images/banner2.svg" alt="" class="banner-image" role="presentation" width="1440" height="60">
   </picture>
 </div>
 </header>
@@ -207,7 +212,7 @@ a:hover:after{width:100%}
       <p>From Kormoon to Privitar, to Informatica, and now <a href="https://www.salesforce.com" target="_blank" rel="noopener">Salesforce</a>—our journey to help businesses govern their data continues.</p>
     </div>
     <div class="astronaut">
-      <img src="images/astronaut-1.svg" alt="Illustration of an astronaut in space" width="288" height="386" />
+      <img src="images/astronaut-1.svg" alt="Illustration of an astronaut in space" width="288" height="386" fetchpriority="high" />
     </div>
   </div>
 </section>
