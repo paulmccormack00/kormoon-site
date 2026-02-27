@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-<title>Kormoon</title>
+<meta charset="UTF-8">
+<title>Kormoon - Data Privacy &amp; Compliance Solutions</title>
 <meta name="description" content="We help businesses understand, anticipate, and comply with data privacy and protection laws by combining artificial intelligence with a team of expert legal advisors. Our simple digital tool helps you identify risk, provides actionable steps to ensure compliance, and makes it easier to engage with your legal teams." />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 
-<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;1,300&family=Rubik:wght@400;500&display=swap">
 
 <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -35,10 +36,19 @@ a{font-family:"Open Sans","Helvetica","Arial",sans-serif;font-style:normal;font-
 a:after{content:"";position:absolute;bottom:0;left:0;width:0;border-bottom:1px solid #262626;transition:all .2s ease}
 a:hover:after{width:100%}
 
+/* Skip Link */
+.skip-link{position:absolute;top:-40px;left:0;background:#7dbb91;color:#fff;padding:8px 16px;z-index:100;font-family:"Open Sans",sans-serif;font-size:14px;transition:top .2s}
+.skip-link:focus{top:0}
+.skip-link:after{display:none}
+
+/* Screen-reader only */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
 /* Animations */
 @keyframes fadeIn{0%{opacity:0}100%{opacity:1}}
 @keyframes bottomToTop{0%{opacity:0;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}
 @keyframes bounce{0%{transform:translateY(0)}50%{transform:translateY(-30px)}100%{transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important}}
 
 /* Site Banner */
 .site-banner img{width:100%;height:auto}
@@ -48,7 +58,7 @@ a:hover:after{width:100%}
 
 /* Hero Section */
 .hero{background:#7dbb91;color:#fff;padding:56px 0 0 0}
-.hero h1{text-indent:-9999px}
+.hero h1 span{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .hero h1 a{display:block;width:153px;height:13px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 188 16' fill='none'%3E%3Cpath d='m38.8 0 0.5 0c4.6 0 8.4 3.6 8.4 8 0 4.4-3.8 8-8.4 8-4.7 0-8.4-3.5-8.4-8l0-0.5h2.9l0 0.5c0 3 2.4 5.4 5.5 5.4 3.1 0 5.5-2.4 5.5-5.4 0-3-2.4-5.3-5.5-5.4l-0.5 0v-2.6zm84.3 0 0.5 0c4.6 0 8.4 3.6 8.4 8 0 4.4-3.8 8-8.4 8-4.7 0-8.4-3.5-8.4-8l0-0.5h2.9l0 0.5c0 3 2.4 5.4 5.5 5.4 3.1 0 5.5-2.4 5.5-5.4 0-3-2.4-5.3-5.5-5.4l-0.5 0v-2.6zm28.6 0 0.5 0c4.6 0 8.4 3.6 8.4 8 0 4.4-3.8 8-8.4 8-4.7 0-8.4-3.5-8.4-8l0-0.5h2.9l0 0.5c0 3 2.4 5.4 5.5 5.4 3.1 0 5.5-2.4 5.5-5.4 0-3-2.4-5.3-5.5-5.4l-0.5 0v-2.6zm-148.8 0.4v15.3h-2.8v-15.3h2.8zm81.5 0 3.6 0.1 5.8 7.4 5.8-7.4 3.1-0.1v15.3h-2.8v-11l-6.1 7.9-9.4-12.2zm-67 0-6.2 6 7.2 9.3h-3.6l-7.2-9.4 6-5.8h3.9zm154.7 0 3.6 0.1 8.8 11.3v-11.3h2.8v15.3h-3.4l-11.8-15.3zm-104.4 0c1.9 0 3.3 0.5 4.3 1.5l0.1 0.1c0.8 0.9 1.2 1.9 1.2 3 0 1.3-0.5 2.4-1.4 3.3-0.9 0.8-2 1.3-3.5 1.4l4.6 5.9h-3.6l-6.5-8.4 4.9 0c0.7 0 1.5-0.1 2.1-0.7 0.4-0.4 0.6-0.9 0.6-1.4 0-0.4-0.1-0.8-0.4-1.2 0 0-0.1-0.1-0.1-0.1-0.3-0.3-0.7-0.5-1.2-0.7-0.3-0.1-0.7-0.1-1.1-0.1h-7.1l-1.5-2.6h8.6zm104.4 11.6 2.8 3.6h-2.8v-3.6z' fill='%23fff'/%3E%3C/svg%3E");background-size:contain;background-repeat:no-repeat}
 .hero h1 a:hover:after{width:0}
 .hero h2{font-family:"Rubik","Helvetica","Arial",sans-serif;font-style:normal;font-weight:400;font-size:40px;line-height:52px;margin:80px 0 24px 0}
@@ -118,7 +128,7 @@ a:hover:after{width:100%}
 .footer{background:#fafafa;padding:56px 0}
 .footer .social{margin-bottom:56px;list-style:none}
 .footer .social li{display:inline-block;margin-right:40px}
-.footer .social li a{display:block;height:24px;width:25px;transition:all .2s ease;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 24' fill='none'%3E%3Cpath d='m1.1 7.7h4.7v16.3h-4.7v-16.3zm2.2-2h0c-1.7 0-2.8-1.2-2.8-2.8 0-1.6 1.1-2.8 2.9-2.8 1.7 0 2.8 1.2 2.8 2.8 0 1.6-1.1 2.8-2.9 2.8zm21.2 18.3h-5.3v-8.4c0-2.2-0.8-3.7-2.7-3.7-1.4 0-2.2 1-2.5 2-0.1 0.4-0.1 0.8-0.1 1.3v8.8h-5.3s0.1-14.9 0-16.3h5.3v2.6c0.3-1.1 2-2.7 4.7-2.7 3.3 0 5.9 2.3 5.9 7.4v9.1z' fill='%23262626'/%3E%3C/svg%3E");background-repeat:no-repeat;text-indent:-9999px}
+.footer .social li a{display:block;height:24px;width:25px;transition:all .2s ease;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 24' fill='none'%3E%3Cpath d='m1.1 7.7h4.7v16.3h-4.7v-16.3zm2.2-2h0c-1.7 0-2.8-1.2-2.8-2.8 0-1.6 1.1-2.8 2.9-2.8 1.7 0 2.8 1.2 2.8 2.8 0 1.6-1.1 2.8-2.9 2.8zm21.2 18.3h-5.3v-8.4c0-2.2-0.8-3.7-2.7-3.7-1.4 0-2.2 1-2.5 2-0.1 0.4-0.1 0.8-0.1 1.3v8.8h-5.3s0.1-14.9 0-16.3h5.3v2.6c0.3-1.1 2-2.7 4.7-2.7 3.3 0 5.9 2.3 5.9 7.4v9.1z' fill='%23262626'/%3E%3C/svg%3E");background-repeat:no-repeat;overflow:hidden;font-size:0}
 .footer .social li a:hover{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 24' fill='none'%3E%3Cpath d='m1.1 7.7h4.7v16.3h-4.7v-16.3zm2.2-2h0c-1.7 0-2.8-1.2-2.8-2.8 0-1.6 1.1-2.8 2.9-2.8 1.7 0 2.8 1.2 2.8 2.8 0 1.6-1.1 2.8-2.9 2.8zm21.2 18.3h-5.3v-8.4c0-2.2-0.8-3.7-2.7-3.7-1.4 0-2.2 1-2.5 2-0.1 0.4-0.1 0.8-0.1 1.3v8.8h-5.3s0.1-14.9 0-16.3h5.3v2.6c0.3-1.1 2-2.7 4.7-2.7 3.3 0 5.9 2.3 5.9 7.4v9.1z' fill='%237DBB91'/%3E%3C/svg%3E")}
 .footer .social li a:after{width:0}
 
@@ -173,18 +183,24 @@ a:hover:after{width:100%}
 </head>
 
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
 <div class="site-banner">
   <picture>
     <source media="(max-width: 999px)" srcset="images/banner2-mobile.svg">
     <source media="(min-width: 1000px)" srcset="images/banner2.svg">
-    <img src="images/banner2.svg" alt="Kormoon Banner" class="banner-image">
+    <img src="images/banner2.svg" alt="" class="banner-image" role="presentation" width="1440" height="60" fetchpriority="high">
   </picture>
 </div>
+</header>
+
+<main id="main-content">
 
 <section class="hero">
   <div class="wrap">
     <div class="hero-intro">
-      <h1><a href="/">Kormoon</a></h1>
+      <h1><a href="/"><span>Kormoon</span></a></h1>
       <h2>We <u>made</u><br>
       navigating data<br>
       compliance simple</h2>
@@ -216,30 +232,30 @@ a:hover:after{width:100%}
   
   <div class="evolution">
     <div class="evolution-step">
-      <div class="evolution-icon">🧭</div>
+      <div class="evolution-icon" aria-hidden="true">🧭</div>
       <p>Navigate compliance</p>
-      <div class="evolution-logo"><img src="images/logo-kormoon.png" alt="Kormoon logo"></div>
+      <div class="evolution-logo"><img src="images/logo-kormoon.png" alt="Kormoon logo" loading="lazy" width="130" height="50"></div>
     </div>
-    <div class="evolution-arrow">→</div>
-    <div class="evolution-arrow-down">↓</div>
+    <div class="evolution-arrow" aria-hidden="true">→</div>
+    <div class="evolution-arrow-down" aria-hidden="true">↓</div>
     <div class="evolution-step">
-      <div class="evolution-icon">🛡️</div>
+      <div class="evolution-icon" aria-hidden="true">🛡️</div>
       <p>Protect data</p>
-      <div class="evolution-logo"><img src="images/logo-privitar.png" alt="Privitar logo"></div>
+      <div class="evolution-logo"><img src="images/logo-privitar.png" alt="Privitar logo" loading="lazy" width="130" height="50"></div>
     </div>
-    <div class="evolution-arrow">→</div>
-    <div class="evolution-arrow-down">↓</div>
+    <div class="evolution-arrow" aria-hidden="true">→</div>
+    <div class="evolution-arrow-down" aria-hidden="true">↓</div>
     <div class="evolution-step">
-      <div class="evolution-icon">🔐</div>
+      <div class="evolution-icon" aria-hidden="true">🔐</div>
       <p>Manage access</p>
-      <div class="evolution-logo"><img src="images/logo-informatica.png" alt="Informatica logo"></div>
+      <div class="evolution-logo"><img src="images/logo-informatica.png" alt="Informatica logo" loading="lazy" width="130" height="50"></div>
     </div>
-    <div class="evolution-arrow">→</div>
-    <div class="evolution-arrow-down">↓</div>
+    <div class="evolution-arrow" aria-hidden="true">→</div>
+    <div class="evolution-arrow-down" aria-hidden="true">↓</div>
     <div class="evolution-step">
-      <div class="evolution-icon">🤖</div>
+      <div class="evolution-icon" aria-hidden="true">🤖</div>
       <p>Govern AI agents</p>
-      <div class="evolution-logo"><img src="images/logo-salesforce.png" alt="Salesforce logo"></div>
+      <div class="evolution-logo"><img src="images/logo-salesforce.png" alt="Salesforce logo" loading="lazy" width="130" height="50"></div>
     </div>
   </div>
 </section>
@@ -247,18 +263,24 @@ a:hover:after{width:100%}
 <section class="mod preview">
   <h2>Understand the data compliance</h2>
   <p>Our step-by-step guide makes it simple to provide details about the data you are collecting, where you collect or use it, and its purpose. Our powerful technology and expert advisors will then analyse your case and provide you with clear actions to understand data compliance.</p>
-  <div class="slider">
+  <div class="slider" role="region" aria-label="Product screenshots">
     <picture>
+      <source srcset="images/kormoon-product-1-mobile.webp" media="(max-width: 699px)" type="image/webp">
+      <source srcset="images/kormoon-product-1-mobile.png" media="(max-width: 699px)">
       <source srcset="images/kormoon-product-1.webp" type="image/webp">
-      <img src="images/kormoon-product-1.png" alt="A preview of the Kormoon product showing open case files that determine your level of risk with data privacy and legal compliance">
+      <img src="images/kormoon-product-1.png" alt="Kormoon product showing open case files that determine your level of risk with data privacy and legal compliance" loading="lazy" width="700" height="467">
     </picture>
     <picture>
+      <source srcset="images/kormoon-product-2-mobile.webp" media="(max-width: 699px)" type="image/webp">
+      <source srcset="images/kormoon-product-2-mobile.png" media="(max-width: 699px)">
       <source srcset="images/kormoon-product-2.webp" type="image/webp">
-      <img src="images/kormoon-product-2.png" alt="A preview of the Kormoon product showing the simple step-by-step guide for data collection">
+      <img src="images/kormoon-product-2.png" alt="Kormoon product showing the simple step-by-step guide for data collection" loading="lazy" width="700" height="467">
     </picture>
     <picture>
+      <source srcset="images/kormoon-product-3-mobile.webp" media="(max-width: 699px)" type="image/webp">
+      <source srcset="images/kormoon-product-3-mobile.png" media="(max-width: 699px)">
       <source srcset="images/kormoon-product-3.webp" type="image/webp">
-      <img src="images/kormoon-product-3.png" alt="A preview of the Kormoon product showing a step in the process of determining a company's level of risk concerning data privacy and legal compliance">
+      <img src="images/kormoon-product-3.png" alt="Kormoon product showing a step in the process of determining a company's level of risk concerning data privacy and legal compliance" loading="lazy" width="700" height="467">
     </picture>
   </div>
 </section>
@@ -268,7 +290,7 @@ a:hover:after{width:100%}
   <div class="audience">
     <div>
       <div class="illustration">
-        <img src="images/astronaut-3.svg" alt="Illustration of an astronaut holding a Kormoon branded flag" width="147" height="200" />
+        <img src="images/astronaut-3.svg" alt="Illustration of an astronaut holding a Kormoon branded flag" width="147" height="200" loading="lazy" />
       </div>
       <h3>Corporations leveraging data</h3>
       <ul>
@@ -280,7 +302,7 @@ a:hover:after{width:100%}
     </div>
     <div>
       <div class="illustration">
-        <img src="images/astronaut-4.svg" alt="Illustration of an astronaut lost and looking for directions" width="168" height="200" />
+        <img src="images/astronaut-4.svg" alt="Illustration of an astronaut lost and looking for directions" width="168" height="200" loading="lazy" />
       </div>
       <h3>Users looking to remove barriers</h3>
       <ul>
@@ -292,7 +314,7 @@ a:hover:after{width:100%}
     </div>
     <div>
       <div class="illustration">
-        <img src="images/astronaut-5.svg" alt="Illustration of an astronaut using a computer" width="223" height="200" />
+        <img src="images/astronaut-5.svg" alt="Illustration of an astronaut using a computer" width="223" height="200" loading="lazy" />
       </div>
       <h3>Legal and compliance teams</h3>
       <ul>
@@ -308,26 +330,35 @@ a:hover:after{width:100%}
 <section class="mod preview risk high">
   <h2>Lower your risk</h2>
   <p>Our powerful rule-based engine (aka Minerva) uses a combination of technology and inputs from a team of expert advisors to assess your level of risk, generate a report that helps you understand your risk, and provides invaluable action steps to lower your risk.</p>
-  <div class="slider">
+  <div class="slider" role="region" aria-label="Risk assessment screenshots">
     <picture>
+      <source srcset="images/kormoon-product-4-mobile.webp" media="(max-width: 699px)" type="image/webp">
+      <source srcset="images/kormoon-product-4-mobile.png" media="(max-width: 699px)">
       <source srcset="images/kormoon-product-4.webp" type="image/webp">
-      <img src="images/kormoon-product-4.png" alt="A preview of the Kormoon product showing a legal compliance report showing a high level of risk for different countries, with actions the company can take to reduce their risk">
+      <img src="images/kormoon-product-4.png" alt="Kormoon legal compliance report showing high risk for different countries, with actions to reduce risk" loading="lazy" width="700" height="467">
     </picture>
     <picture>
+      <source srcset="images/kormoon-product-5-mobile.webp" media="(max-width: 699px)" type="image/webp">
+      <source srcset="images/kormoon-product-5-mobile.png" media="(max-width: 699px)">
       <source srcset="images/kormoon-product-5.webp" type="image/webp">
-      <img src="images/kormoon-product-5.png" alt="A preview of the Kormoon product showing a legal compliance report showing a medium level of risk for different countries, with actions the company can take to reduce their risk">
+      <img src="images/kormoon-product-5.png" alt="Kormoon legal compliance report showing medium risk for different countries, with actions to reduce risk" loading="lazy" width="700" height="467">
     </picture>
     <picture>
+      <source srcset="images/kormoon-product-6-mobile.webp" media="(max-width: 699px)" type="image/webp">
+      <source srcset="images/kormoon-product-6-mobile.png" media="(max-width: 699px)">
       <source srcset="images/kormoon-product-6.webp" type="image/webp">
-      <img src="images/kormoon-product-6.png" alt="A preview of the Kormoon product showing a legal compliance report showing a low level of risk for different countries, with actions the company can take to further reduce their risk">
+      <img src="images/kormoon-product-6.png" alt="Kormoon legal compliance report showing low risk for different countries, with actions to further reduce risk" loading="lazy" width="700" height="467">
     </picture>
   </div>
 </section>
 
+</main>
+
+<footer>
 <section class="footer">
   <div class="wrap">
     <ul class="social">
-      <li><a href="https://www.linkedin.com/company/kormoon/" target="_blank" rel="noopener" class="linkedin" title="Follow us on LinkedIn">Follow us on LinkedIn</a></li>
+      <li><a href="https://www.linkedin.com/company/kormoon/" target="_blank" rel="noopener" class="linkedin" aria-label="Follow us on LinkedIn">Follow us on LinkedIn</a></li>
     </ul>
   </div>
 </section>
@@ -342,11 +373,13 @@ a:hover:after{width:100%}
         <li><a href="cookie-notice.html">Cookie notice</a></li>
         <li><a href="website-terms.html">Website terms</a></li>
       </ul>
-      <p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Kormoon Ltd</p>
+      <p class="copyright">&copy; <span id="year"></span> Kormoon Ltd</p>
     </div>
-    <img class="footer-astronaut" src="images/astronaut-2.svg" alt="Illustration of an astronaut giving a thumbs up" width="320" height="478" />
+    <img class="footer-astronaut" src="images/astronaut-2.svg" alt="Illustration of an astronaut giving a thumbs up" width="320" height="478" loading="lazy" />
   </div>
 </section>
+</footer>
 
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
